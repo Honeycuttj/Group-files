@@ -8,7 +8,7 @@ While (Test-Path $testPath) {
 
 $NewFolder = New-Item -ItemType directory -Path $filePath -Name $directoryName$counter
 
-Get-ChildItem $filePath | where {$_.Extension -eq $fileExtention} | select -First 25 | Move-Item -Destination $NewFolder
+Get-ChildItem $filePath | Where-Object {$_.Extension -eq $fileExtention} | Select-Object -First 25 | Move-Item -Destination $NewFolder
 
 $counter ++
 
